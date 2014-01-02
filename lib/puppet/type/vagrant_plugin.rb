@@ -17,11 +17,11 @@ Puppet::Type.newtype(:vagrant_plugin) do
   newparam :name do
     isnamevar
 
-    #validate do |value|
-    #  unless value =~ /\Avagrant-\w+(-\w+)*\z/
-    #    raise Puppet::Error, "Invalid value for name: #{value}"
-    #  end
-    #end
+    validate do |value|
+      unless value =~ /\Avagrant-\w+(-\w+)*\z/
+        raise Puppet::Error, "Invalid value for name: #{value}"
+      end
+    end
   end
 
   autorequire :package do
