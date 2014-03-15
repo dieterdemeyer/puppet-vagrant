@@ -25,7 +25,7 @@ Puppet::Type.newtype(:vagrant_plugin) do
   end
 
   autorequire :package do
-    %w(Vagrant_1_5_0 vagrant)
+    %w(Vagrant_1_5_1 vagrant)
   end
 
   autorequire :file do
