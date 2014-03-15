@@ -13,12 +13,6 @@ Puppet::Type.newtype :vagrant_box do
 
   newparam :name do
     isnamevar
-
-    validate do |value|
-      unless value =~ /\A\w+\/\w+\z/
-        raise Puppet::Error, "Malformed name: vagrant_box[#{value}]"
-      end
-    end
   end
 
   newparam :source do
@@ -33,7 +27,7 @@ Puppet::Type.newtype :vagrant_box do
   end
 
   autorequire :package do
-    %w(Vagrant_1_4_3 vagrant)
+    %w(Vagrant_1_5_0 vagrant)
   end
 
   autorequire :vagrant_plugin do
